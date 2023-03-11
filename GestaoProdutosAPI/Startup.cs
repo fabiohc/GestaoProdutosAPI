@@ -1,16 +1,16 @@
+using GestaoProduto.Infra.Data.Context;
+using GestaoProdutos.Infra.IOC;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using AutoMapper;
+
+
+
 
 namespace GestaoProdutosAPI
 {
@@ -32,6 +32,12 @@ namespace GestaoProdutosAPI
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "GestaoProdutosAPI", Version = "v1" });
             });
+
+            services.AddDbContext<Contexto>(options =>
+            options.UseSqlServer(Configuration.GetConnectionString("GestaoProdutoConnString")));  
+            services.AddMvc();
+
+            InjetorDependencia.Registrar(services);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -5,7 +5,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="DTO\FornecedorDTO.cs" />
+    <Compile Remove="DTO\ProdutoDTO.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="AutoMapper" Version="12.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Servicos\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="DTO\FornecedorDTO.cs" />
+    <None Include="DTO\ProdutoDTO.cs" />
   </ItemGroup>
 
 </Project>
