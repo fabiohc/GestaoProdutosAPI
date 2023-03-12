@@ -4,13 +4,13 @@ using Microsoft.EntityFrameworkCore;
 
 namespace GestaoProduto.Infra.Data.Context
 {
-    public partial class Context : DbContext
+    public partial class Contexto : DbContext
     {
-        public Context()
+        public Contexto()
         {
         }
 
-        public Context(DbContextOptions<Context> options)
+        public Contexto(DbContextOptions<Contexto> options)
             : base(options)
         {
         }
@@ -23,7 +23,7 @@ namespace GestaoProduto.Infra.Data.Context
             modelBuilder.Entity<Fornecedor>(entity =>
             {
                 entity.HasKey(e => e.CodigoFornecedor);
-                   // .HasName("PK__Forneced__1FA78911A8D536FF");
+                // .HasName("PK__Forneced__1FA78911A8D536FF");
             });
 
             modelBuilder.Entity<Produto>(entity =>
@@ -34,7 +34,7 @@ namespace GestaoProduto.Infra.Data.Context
                     .WithMany()
                     .HasForeignKey(d => d.CodigoProduto)
                     .OnDelete(DeleteBehavior.ClientSetNull);
-                    //.HasConstraintName("fk_FornecedorProduto");
+                //.HasConstraintName("fk_FornecedorProduto");
             });
 
             OnModelCreatingPartial(modelBuilder);

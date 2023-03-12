@@ -8,4 +8,10 @@
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\GestaoProduto.Infra.Data\GestaoProduto.Infra.Data.csproj" />
+    <ProjectReference Include="..\GestaoProdutos.Aplication\GestaoProdutos.Application.csproj" />
+    <ProjectReference Include="..\GestaProdutos.Domain\GestaProdutos.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

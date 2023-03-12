@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace GestaoProdutos.Aplication.Interfaces
 {
-    public interface IFornecedorApp
+    public interface IFornecedorRepositorio
     {
 
         void Incluir(Fornecedor produto);

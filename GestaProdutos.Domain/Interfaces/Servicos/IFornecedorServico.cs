@@ -1,12 +1,15 @@
-﻿using GestaProdutos.Domain.Entidades;
+﻿
+using GestaProdutos.Domain.Entidades;
+using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
-namespace GestaoProdutos.Aplication.Interfaces
+namespace GestaProdutos.Domain.Interfaces.Servicos
 {
-    public interface IFornecedorApp
+    public interface IFornecedorServico
     {
-
         void Incluir(Fornecedor produto);
         void Alterar(Fornecedor produto);
         void Excluir(Fornecedor produto);

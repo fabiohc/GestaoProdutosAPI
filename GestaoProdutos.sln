@@ -15,13 +15,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Domain", "3 - Domain", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Infra", "4 - Infra", "{5575FE8A-7C10-4E2F-A736-7BF757503058}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestaoProdutos.Aplication", "GestaoProdutos.Aplication\GestaoProdutos.Aplication.csproj", "{4F5728AB-814A-468F-97B8-CB5CD6A6C9EC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestaoProdutos.Application", "GestaoProdutos.Aplication\GestaoProdutos.Application.csproj", "{4F5728AB-814A-468F-97B8-CB5CD6A6C9EC}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestaoProdutos.Infra.IOC", "GestaoProdutos.Infra.IOC\GestaoProdutos.Infra.IOC.csproj", "{1F0F8E29-BC31-444B-BA9B-FB52EA734CF4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestaProdutos.Domain", "GestaProdutos.Domain\GestaProdutos.Domain.csproj", "{147B9187-A773-43BE-83FA-DF021EDDF21D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestaProdutos.Domain", "GestaProdutos.Domain\GestaProdutos.Domain.csproj", "{147B9187-A773-43BE-83FA-DF021EDDF21D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestaoProduto.Infra.Data", "GestaoProduto.Infra.Data\GestaoProduto.Infra.Data.csproj", "{1771F0D0-5161-4B00-AF88-B7892FA957A2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestaoProduto.Infra.Data", "GestaoProduto.Infra.Data\GestaoProduto.Infra.Data.csproj", "{1771F0D0-5161-4B00-AF88-B7892FA957A2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
