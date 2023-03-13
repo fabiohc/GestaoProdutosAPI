@@ -6,7 +6,7 @@ namespace GestaoProduto.Infra.Data.Context
 {
     public partial class Contexto : DbContext
     {
-        public Contexto()
+        public Contexto(DbContextOptionsBuilder<Contexto> options)
         {
         }
 
@@ -15,26 +15,21 @@ namespace GestaoProduto.Infra.Data.Context
         {
         }
 
-        public virtual DbSet<Fornecedor> Fornecedor { get; set; }
-        public virtual DbSet<Produto> Produto { get; set; }
+        public virtual DbSet<ProdutoFornecedor> ProdutoFornecedor { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Fornecedor>(entity =>
-            {
-                entity.HasKey(e => e.CodigoFornecedor);
-                // .HasName("PK__Forneced__1FA78911A8D536FF");
-            });
+            modelBuilder.HasAnnotation("Relational:Collation", "Latin1_General_CI_AS");
 
-            modelBuilder.Entity<Produto>(entity =>
+            modelBuilder.Entity<ProdutoFornecedor>(entity =>
             {
+                entity.Property(e => e.Cnpj).IsUnicode(false);
+
                 entity.Property(e => e.CodigoProduto).ValueGeneratedOnAdd();
 
-                entity.HasOne(d => d.CodigoProdutoNavigation)
-                    .WithMany()
-                    .HasForeignKey(d => d.CodigoProduto)
-                    .OnDelete(DeleteBehavior.ClientSetNull);
-                //.HasConstraintName("fk_FornecedorProduto");
+                entity.Property(e => e.DescricaoFornecedor).IsUnicode(false);
+
+                entity.Property(e => e.DescricaoProduto).IsUnicode(false);
             });
 
             OnModelCreatingPartial(modelBuilder);

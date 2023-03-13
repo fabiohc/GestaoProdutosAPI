@@ -1,8 +1,8 @@
 ﻿using GestaoProduto.Infra.Data.Repositorio;
 using GestaoProdutos.Aplication.Interfaces;
+using GestaProdutos.Domain.Interfaces.Servicos;
 using GestaProdutos.Domain.Servicos;
 using Microsoft.Extensions.DependencyInjection;
-using GestaProdutos.Domain.Interfaces.Servicos;
 
 namespace GestaoProdutos.Infra.IOC
 {
@@ -10,17 +10,14 @@ namespace GestaoProdutos.Infra.IOC
     {
         public static void Registrar(IServiceCollection svcCollection)
         {
-            //Aplicação
-            svcCollection.AddScoped<IFornecedorApp, FonecedorApp>();
-            svcCollection.AddScoped<IProdutoApp, ProdutoApp>();
+            //Aplicação          
+            svcCollection.AddScoped<IProdutoFornecedorApp, ProdutoFornecedorApp>();
 
-            //Domínio
-            svcCollection.AddScoped<IFornecedorServico, FornecedorServico>();
-            svcCollection.AddScoped<IProdutoServico, ProdutoServico>();
+            //Domínio            
+            svcCollection.AddScoped<IProdutoFornecedorServico, ProdutoFornecedorServico>();
 
-            //Repositorio
-            svcCollection.AddScoped<IFornecedorRepositorio, ForncedorRepositorio>();
-            svcCollection.AddScoped<IProdutoRepositorio, ProdutoRepositorio>();
+            //Repositorio          
+            svcCollection.AddScoped<IProdutoFornecedorRepositorio, ProdutoFonecedorRepositorio>();
 
         }
     }
