@@ -26,7 +26,7 @@ namespace GestaoProdutosAPI.Controllers
         }
 
         [HttpGet("/GetProdutos")]
-        public async Task<ActionResult<IEnumerable<ProdutoFornecedor>>> GetProdutos([FromQuery] GetProdutoFornecedorDTO getProduto,int skip = 1, int take = 10)
+        public async Task<ActionResult<IEnumerable<ProdutoFornecedor>>> GetProdutos([FromQuery] GetProdutoFornecedorDTO getProduto,int skip =  0, int take = 10)
         {
             try
             {
@@ -60,7 +60,7 @@ namespace GestaoProdutosAPI.Controllers
         }
 
         [HttpPost("/CadastraProduto")]
-        public async Task<ActionResult> CadastraProduto(PostProdutoFornecedorDTO produtoDTO)
+        public async Task<ActionResult> CadastraProduto([FromQuery] PostProdutoFornecedorDTO produtoDTO)
         {
             try
             {
@@ -81,7 +81,7 @@ namespace GestaoProdutosAPI.Controllers
         }
 
         [HttpPut("/AlterarProduto")]
-        public async Task<ActionResult> AlterarProduto(PostProdutoFornecedorDTO produtoDTO)
+        public async Task<ActionResult> AlterarProduto([FromQuery] GetProdutoFornecedorDTO produtoDTO)
         {
             try
             {

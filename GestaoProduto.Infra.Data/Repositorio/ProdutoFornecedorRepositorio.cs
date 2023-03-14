@@ -21,8 +21,57 @@ namespace GestaoProduto.Infra.Data.Repositorio
         }
 
         public void Alterar(ProdutoFornecedor produto)
-        {         
-            _contexto.Entry(produto).State = EntityState.Modified;
+        {
+
+           var produtoAlterar =  _contexto.ProdutoFornecedor.Where(x => x.CodigoProduto == produto.CodigoProduto).FirstOrDefaultAsync().Result;
+
+
+            if (produtoAlterar != null)
+            {
+
+                if (produto.CodigoProduto  > 0) 
+                {
+                    produtoAlterar.CodigoProduto = produto.CodigoProduto;
+                }
+
+                if (!string.IsNullOrWhiteSpace(produto.DescricaoProduto))
+                {
+                    produtoAlterar.DescricaoProduto = produto.DescricaoProduto;
+                }
+
+                if (produto.Situacao != null)
+                {
+                    produtoAlterar.Situacao = produto.Situacao;
+                }
+
+                if (produto.DataFabricacao != DateTime.MinValue)
+                {
+                    produtoAlterar.DataFabricacao = produto.DataFabricacao;
+                }
+
+                if (produto.DataFabricacao != DateTime.MinValue)
+                {
+                    produtoAlterar.DataValidade = produto.DataValidade;
+                }
+
+                if (produto.CodigoFornecedor != null)
+                {
+                    produtoAlterar.CodigoFornecedor = produto.CodigoFornecedor;
+                }
+
+                if (produto.DescricaoFornecedor != null)
+                {
+                    produtoAlterar.DescricaoFornecedor = produto.DescricaoFornecedor;
+                }
+
+                if (produto.Cnpj != null)
+                {
+                    produtoAlterar.Cnpj = produto.Cnpj;
+                }
+            }
+
+           // _contexto.SaveChanges();
+            _contexto.Entry(produtoAlterar).State = EntityState.Modified;
         }
 
         public void ExcluirLogico(ProdutoFornecedor produto)
