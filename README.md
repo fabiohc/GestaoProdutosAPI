@@ -1,7 +1,7 @@
 # GestaoProdutosAPI
 Desenvolvimento de API para gestão de produtos
 
-Fala ia Dev. BELEZA.. Que Bom!
+Fala ai Dev. BELEZA..
 
 
 Nesse projeto temos a implementação de uma API para Gestão de produtos e fornecedor.
